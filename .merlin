@@ -1,7 +1,6 @@
 S .
 B _build/
 
-PKG menhirLib
-PKG sedlex
+PKG pcre
 PKG batteries
 
