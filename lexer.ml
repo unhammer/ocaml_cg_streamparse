@@ -3,6 +3,7 @@ open Sedlex_menhir
 let lex_blank lexbuf =
   let buf = lexbuf.stream in
   match%sedlex buf with
+  | any, "\n" -> update lexbuf ; new_line lexbuf ; Parser.SINGLECHAR (lexeme lexbuf)
   | Star (Compl '\n'), Opt "\n" -> update lexbuf ; new_line lexbuf ; Parser.BLANK (lexeme lexbuf)
   | eof -> update lexbuf ; Parser.EOF
   | _ -> raise_ParseError lexbuf

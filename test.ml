@@ -8,6 +8,7 @@ let tokenise filename =
     | Parser.EOF -> print_endline "EOF"
     | Parser.NEWLINE -> print_endline "NEWLINE"; loop ()
     | Parser.BLANK b -> print_endline ("BLANK "^b);loop ()
+    | Parser.SINGLECHAR b -> print_endline ("SINGLECHAR "^b);loop ()
     | Parser.TAG b -> print_endline ("TAG "^b);loop ()
     | Parser.LEMMA b -> print_endline ("LEMMA "^b);loop ()
     | Parser.WF wf -> print_endline ("WF "^wf);loop ()

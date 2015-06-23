@@ -4,6 +4,7 @@
 %token <string> LEMMA
 %token <string> TAG
 %token <string> BLANK
+%token <string> SINGLECHAR
 %token NEWLINE
 %token EOF
 
@@ -28,4 +29,5 @@ tag:
 
 blank:
   | b = BLANK { b }
+  | b = SINGLECHAR { b }
   ;
